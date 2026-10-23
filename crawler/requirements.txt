@@ -1,1 +1,4 @@
-scrapy
+scrapy==2.19.0
+idna==3.20
+requests==2.34.2
+certifi==2026.10.19
