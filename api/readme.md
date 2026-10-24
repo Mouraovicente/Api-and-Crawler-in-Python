@@ -12,7 +12,9 @@ Requisitos:
 > <br> Lembre-se de estar na pasta /api/ ao executar os comandos abaixo:
 
  1. `pip install -r requirements.txt`   para instalar as dependências 
- 2. `python manage.py runserver` para executar o servidor na porta :8000
+ 2. Defina as variáveis de ambiente (veja `.env.example`; o Django não lê o arquivo `.env` sozinho, exporte no shell). `DJANGO_SECRET_KEY` é obrigatória: sem ela o servidor aborta com `RuntimeError: DJANGO_SECRET_KEY is required...`. Só para desenvolvimento local, `DJANGO_DEBUG=true` libera uma chave insegura de dev. Opcional: `DJANGO_ALLOWED_HOSTS` (padrão `localhost,127.0.0.1`).
+ 3. `python manage.py migrate` para criar o banco, caso `db.sqlite3` não exista
+ 4. `python manage.py runserver` para executar o servidor na porta :8000 (endpoints em `/biblioteca/`)
 
 Agora basta importar o Postman [por link](https://www.getpostman.com/collections/ab77ab1737fcf5ec147e) ou por arquivo que esta em `api/Biblioteca.postman_collection.json`
 
